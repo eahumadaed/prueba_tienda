@@ -18,7 +18,7 @@ class Tienda:
     
     def verificar_producto(self,nombre_producto):
         # Verifico que el producto se encuentre en la lista
-        return any(producto.nombre == nombre_producto for producto in self._productos)
+         return any(producto.nombre == nombre_producto for producto in self._productos)
 
     def realizar_venta(self, nombre_producto, cantidad):
         # Busca el producto y reduce el stock según la cantidad vendida
@@ -40,11 +40,11 @@ class Restaurante(Tienda):
 
     def listar_productos(self):
         # Oculta el stock en el listado de productos
-        return '\n'.join(f"{prod.nombre}, Precio: ${format(int(prod.precio), ',').replace(',', '.')}" for prod in self._productos)
+        return '\n'.join(f"{prod.nombre}, Precio: {prod.precio}" for prod in self._productos)
     
     def verificar_producto(self,nombre_producto):
         # Verifico que el producto se encuentre en la lista
-        return any(producto.nombre == nombre_producto for producto in self._productos)
+         return any(producto.nombre == nombre_producto for producto in self._productos)
     
     def realizar_venta(self, nombre_producto, cantidad):
         # Verifica solo si el producto existe, no necesita verificar stock
@@ -74,7 +74,7 @@ class Farmacia(Tienda):
     
     def verificar_producto(self,nombre_producto):
         # Verifico que el producto se encuentre en la lista
-        return any(producto.nombre == nombre_producto for producto in self._productos)
+         return any(producto.nombre == nombre_producto for producto in self._productos)
     
     def realizar_venta(self, nombre_producto, cantidad):
         # Limita la cantidad de productos que se pueden vender en una transacción
